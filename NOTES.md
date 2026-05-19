@@ -106,3 +106,31 @@ Response:
 ```
 204 No Content
 ```
+
+### Data Validation
+
+In ASP.NET Core data validation for endpoints can be performed using data annotations.
+
+In order to use these annotations include the namespace `System.ComponentModel.DataAnnotations`
+
+```
+using System.ComponentModel.DataAnnotations;
+
+namespace GameStore.Api.Dtos;
+
+public record CreateGameDto(
+    [Required][StringLength(50)] string Name,
+    string Genre,
+    decimal Price,
+    DateOnly ReleaseDate
+);
+
+```
+
+In order for the application to apply the validation during HTTP requests, it has to be setup when building the app using the builder: 
+
+```
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddValidation();
+```
