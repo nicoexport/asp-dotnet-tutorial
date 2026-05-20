@@ -134,3 +134,31 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddValidation();
 ```
+
+### What is Object-Relational Mapping (O/RM)?
+
+In principle Queries to a Database are written in SQL for example. The application is written in c# though. An overhead of converting C# requests to SQL queries would be required. 
+
+O/RM fixes this by introducing mappings between OOP objects and database tables.
+
+It is a technique for converting data between a relational database and aan object-oriented program.
+
+OOP <--> O/RM <--> Relational Database
+
+ASP.NET provides a O/RM framework called "Entity Framework Core".
+
+### What is Entity Framework Core
+
+A lightweight, extensible, open source and cross platform object-relational mapper for .NET.
+
+REST API <--> Entity Framework Core <--> Database
+
+Translates C# code to SQL statements and resulting data into resulting objects.
+
+Benefits:
+- no need to learn a new language
+- minimal data-acces code (LINQ)
+- tooling to keep C# models in sync with DB tables
+- change tracking
+- supports multiple database providers
+
