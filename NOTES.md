@@ -162,3 +162,19 @@ Benefits:
 - change tracking
 - supports multiple database providers
 
+## Dependency Injection
+
+3 Types: 
+- Transient 
+- Scoped
+- Singleton
+
+### Transient
+
+### Scoped
+One instance of dependency per http request
+
+### Singleton
+one instance of dependency per program
+
+
