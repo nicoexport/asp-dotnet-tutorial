@@ -177,4 +177,14 @@ One instance of dependency per http request
 ### Singleton
 one instance of dependency per program
 
+### Dependy Injection and Database context 
+
+// builder.Services.AddScoped<GameStoreContext>();
+// AddSqlite adds the service scoped
+// this is done because DB conntextions are a limited and expensive resource
+// DbContext is not thread-safe. Scoped avoids concurrency issues
+// Makes it easier to manage transactions and esnure data consistency
+// Reusing a DbContext instance can lead to increased memory usage
+
+
 

@@ -18,6 +18,13 @@ public static class DataExtensions
     {
         var connString = builder.Configuration.GetConnectionString("GameStore");
 
+        // builder.Services.AddScoped<GameStoreContext>();
+        // AddSqlite adds the service scoped
+        // this is done because DB conntextions are a limited and expensive resource
+        // DbContext is not thread-safe. Scoped avoids concurrency issues
+        // Makes it easier to manage transactions and esnure data consistency
+        // Reusing a DbContext instance can lead to increased memory usage
+
         builder.Services.AddSqlite<GameStoreContext>(
             connString,
             optionsAction: options => options.UseSeeding((context, _) =>
